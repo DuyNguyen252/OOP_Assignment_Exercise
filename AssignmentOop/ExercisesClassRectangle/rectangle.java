@@ -1,4 +1,4 @@
-package AssignmentJava.ExercisesClassRectangle;
+package AssignmentOop.ExercisesClassRectangle;
 
 public class rectangle {
     double width, height;

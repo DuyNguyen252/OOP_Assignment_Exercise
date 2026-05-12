@@ -1,4 +1,4 @@
-package AssignmentJava.ExercisesClassBook;
+package AssignmentOop.ExercisesClassBook;
 
 public class Main {
     String title;

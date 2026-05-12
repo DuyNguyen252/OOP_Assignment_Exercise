@@ -1,4 +1,4 @@
-package AssignmentJava.ExercisesClassCricle;
+package AssignmentOop.ExercisesClassCricle;
 
 public class circle {
     double radius;
