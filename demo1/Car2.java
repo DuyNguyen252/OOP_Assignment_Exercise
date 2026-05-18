@@ -1,4 +1,5 @@
-package demo;
+package demo1;
+
 public class Car2 {
     public static void main(String[] args) {
         Car car1 = new Car("29A-12345", "Đỏ");

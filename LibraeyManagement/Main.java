@@ -7,6 +7,6 @@ public class Main {
         b1.title = "java";
         b1.author = "AndyNguyen";
         b1.price = 100;
-        b1.printInfo();
+        b1.printInfor();
     }
 }
