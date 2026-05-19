@@ -56,13 +56,14 @@ public class Main {
 
 
         //Bài 4
+   
         Employee e1 = new Employee("An", 1000);
         Employee e2 = new Employee("Binh", 2000);
         Employee e3 = new Employee("Cuong", 3000);
 
-        System.out.println(e1.getId());
-        System.out.println(e2.getId());
-        System.out.println(e3.getId());
+        e1.displayInfo();
+        e2.displayInfo();
+        e3.displayInfo();
 
         System.out.println("Tong nhan vien: "
                 + Employee.getEmployeeCount());

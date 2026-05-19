@@ -1,7 +1,6 @@
 package model;
 
 public class Employee {
-
     private int id;
     private String name;
     private double salary;
@@ -12,7 +11,7 @@ public class Employee {
 
     public static String companyName = "TechCorp";
 
-    // constructor
+    // Constructor
     public Employee(String name, double salary) {
         this.id = nextId;
         nextId++;
@@ -24,7 +23,7 @@ public class Employee {
         totalSalary += salary;
     }
 
-    // getter
+    // Getter
     public int getId() {
         return id;
     }
@@ -37,7 +36,7 @@ public class Employee {
         return salary;
     }
 
-    // setter
+    // Setter
     public void setName(String name) {
         this.name = name;
     }
@@ -48,10 +47,10 @@ public class Employee {
 
         this.salary = salary;
 
-        totalSalary += this.salary;
+        totalSalary += salary;
     }
 
-    // static methods
+    // Static method
     public static int getEmployeeCount() {
         return employeeCount;
     }
@@ -67,5 +66,13 @@ public class Employee {
         }
 
         return totalSalary / employeeCount;
+    }
+
+    // Hiển thị thông tin
+    public void displayInfo() {
+        System.out.println("ID: " + id);
+        System.out.println("Name: " + name);
+        System.out.println("Salary: " + salary);
+        System.out.println("----------------");
     }
 }
