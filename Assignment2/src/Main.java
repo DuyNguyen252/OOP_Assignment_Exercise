@@ -81,27 +81,27 @@ public class Main {
 
                 // Bài 5
                 // Tạo sản phẩm
-                  // Tạo sản phẩm
-        Product p1 = new Product();
-        Product p2 = new Product("Laptop", 20000);
-        Product p3 = new Product("Phone", 15000, 10);
+                // Tạo sản phẩm
+                Product p1 = new Product();
+                Product p2 = new Product("Laptop", 20000);
+                Product p3 = new Product("Phone", 15000, 10);
 
-        // Hiển thị thông tin
-        p1.displayInfo();
-        p2.displayInfo();
-        p3.displayInfo();
+                // Hiển thị thông tin
+                p1.displayInfo();
+                p2.displayInfo();
+                p3.displayInfo();
 
-        // Nhập hàng
-        p2.restock(5);
+                // Nhập hàng
+                p2.restock(5);
 
-        // Bán hàng
-        p3.sell(3);
-        
-        // Hiển thị lại
-        p2.displayInfo();
-        p3.displayInfo();
+                // Bán hàng
+                p3.sell(3);
 
-        // Báo cáo
-        System.out.println(Product.getStoreReport());
+                // Hiển thị lại
+                p2.displayInfo();
+                p3.displayInfo();
+
+                // Báo cáo
+                System.out.println(Product.getStoreReport());
         }
 }
