@@ -64,20 +64,16 @@ public class Main {
                 e2.displayInfo();
                 e3.displayInfo();
 
-                System.out.println("Tong nhan vien: "
-                                + Employee.getEmployeeCount());
+                System.out.println("Tong nhan vien: " + Employee.getEmployeeCount());
 
-                System.out.println("Tong luong: "
-                                + Employee.getTotalSalary());
+                System.out.println("Tong luong: " + Employee.getTotalSalary());
 
-                System.out.println("Luong trung binh: "
-                                + Employee.getAverageSalary());
+                System.out.println("Luong trung binh: " + Employee.getAverageSalary());
 
                 // đổi lương
                 e1.setSalary(5000);
 
-                System.out.println("Tong luong moi: "
-                                + Employee.getTotalSalary());
+                System.out.println("Tong luong moi: " + Employee.getTotalSalary());
 
                 // Bài 5
                 // Tạo sản phẩm

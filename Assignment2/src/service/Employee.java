@@ -8,7 +8,6 @@ public class Employee {
     private static int employeeCount = 0;
     private static int nextId = 1000;
     private static double totalSalary = 0;
-
     public static String companyName = "TechCorp";
 
     // Constructor
