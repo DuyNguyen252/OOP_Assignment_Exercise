@@ -1,4 +1,4 @@
-package model;
+package service;
 
 public class BankAccount {
     private String tenTk;

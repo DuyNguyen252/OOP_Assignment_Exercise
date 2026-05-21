@@ -1,6 +1,6 @@
-import model.Book;
-import model.Employee;
-import model.BankAccount;
+import service.BankAccount;
+import service.Book;
+import service.Employee;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,8 +23,8 @@ public class Main {
         book3.displayInfo();
 
         // Bài 2
-        model.Rectangle rectangle1 = new model.Rectangle();
-        model.Rectangle rectangle2 = new model.Rectangle(4, 5);
+        service.Rectangle rectangle1 = new service.Rectangle();
+        service.Rectangle rectangle2 = new service.Rectangle(4, 5);
 
         rectangle1.displayInfo();
         rectangle2.displayInfo();
