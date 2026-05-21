@@ -1,4 +1,4 @@
-package AssignmentOop.ExercisesClassBook;
+package Assignment1.ExercisesClassBook;
 
 public class Main {
     String title;

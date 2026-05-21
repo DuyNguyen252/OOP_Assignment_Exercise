@@ -54,16 +54,12 @@ public class BankAccount {
 
     public void displayInfo() {
       
-
         // Kiểm tra nếu STK có từ 4 số trở lên mới cắt được 4 số cuối
         String hiddenAccount = "****" + String.valueOf(stk).substring(String.valueOf(stk).length() - 4);
-
         System.out.println("----Thong tin tai khoan----");
         System.out.println("Ten tai khoan: " + tenTk);
         System.out.println("4 chu so cuoi cua so tai khoan: " + hiddenAccount);
         System.out.println("So du: " + soDu);
         System.out.println("\n");
     }
-
-
 }

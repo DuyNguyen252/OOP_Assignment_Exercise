@@ -1,4 +1,4 @@
-package AssignmentOop.ExercisesClassRectangle;
+package Assignment1.ExercisesClassRectangle;
 
 public class Main {
     double width, height;

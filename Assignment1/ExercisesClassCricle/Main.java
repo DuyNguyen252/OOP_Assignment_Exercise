@@ -1,4 +1,4 @@
-package AssignmentOop.ExercisesClassCricle;
+package Assignment1.ExercisesClassCricle;
 
 public class Main {
     double radius;

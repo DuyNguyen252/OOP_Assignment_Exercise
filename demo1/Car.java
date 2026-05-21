@@ -1,3 +1,4 @@
+package demo1;
 public class Car{
     // thuoc tinh
     private String licensePlate;

@@ -49,7 +49,6 @@ public class Main {
 
         // Test lỗi
         account1.deposit(-100);
-
         account1.withdraw(5000);
         System.out.println("Sau khi nap tien khong hop le va rut tien khong hop le:");    
         account1.displayInfo();
