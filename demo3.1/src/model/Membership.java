@@ -1,3 +1,5 @@
+package model;
+
 public class Membership {
     //// Thuộc tính private --> tinh gói
     private String packageId;
@@ -17,7 +19,6 @@ public class Membership {
     public String getPackageId() {
         return packageId;
     }
-
     public void setPackageId(String packageId) {
         this.packageId = packageId;
     }
@@ -25,15 +26,13 @@ public class Membership {
     public String getPackageName() {
         return packageName;
     }
-
     public void setPackageName(String packageName) {
         this.packageName = packageName;
     }
 
-    public double price() {
+    public double getPrice() {
         return price;
     }
-
     public void setPrice(double price) {
         this.price = price;
     }
@@ -41,15 +40,20 @@ public class Membership {
     public int getDurationDays() {
         return durationDays;
     }
-
     public void setDurationDays(int durationDays) {
         this.durationDays = durationDays;
     }
 
     /// logic nghiep vu
-    //
+    // tra ve gia tri true neu nhu goi tap het han so voi ngay da su dung
+    public boolean isExpired(int daysUsed) {
+        // boolean expired = daysUsed > durationDays;
+        return daysUsed > durationDays;
+    }
     
-
+    public String getInfo() {
+        return "[ "+ packageId +", " + packageName + "," + price + "," + durationDays + " ]";
+    }
 
     
 }
