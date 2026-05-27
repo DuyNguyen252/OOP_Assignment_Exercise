@@ -30,7 +30,8 @@ public class Library {
     }
 
     // Quản lý mượn sách
-    public void borrowBook(Librarian librarian, Reader reader, Book book, int slipId, String borrowDate, String dueDate) {
+    public void borrowBook(Librarian librarian, Reader reader, Book book, int slipId, String borrowDate,
+            String dueDate) {
         BorrowSlip slip = librarian.borrowBook(reader, book, slipId, borrowDate, dueDate);
         if (slip != null) {
             borrowSlips.add(slip);
@@ -48,14 +49,15 @@ public class Library {
         return null; // Không tìm thấy sách
     }
 
-    //thống sách quá hạn
+    // thống sách quá hạn
     public void listOverdueBooks() {
         LocalDate currentDate = LocalDate.now();
         System.out.println("Overdue Books:");
         for (BorrowSlip slip : borrowSlips) {
             LocalDate dueDate = LocalDate.parse(slip.getDueDate());
             if (currentDate.isAfter(dueDate)) {
-                System.out.println("Sách: " + slip.getBook().getTitle() + ", Người mượn: " + slip.getReader().getFullName() + ", Ngày đến hạn: " + slip.getDueDate());
+                System.out.println("Sách: " + slip.getBook().getTitle() + ", Người mượn: "
+                        + slip.getReader().getFullName() + ", Ngày đến hạn: " + slip.getDueDate());
             }
         }
     }

@@ -18,37 +18,37 @@ public class Main {
                 "alice@example.com",
                 Reader.TypeOfReader.GiaoVien,
                 "2024-06-01");
+
         Reader reader2 = new Reader(2,
                 "Andy",
                 "bob@example.com",
                 Reader.TypeOfReader.SinhVien,
                 "2024-06-01");
 
-        // Độc giả mượn sách
+        // Hiển thị thong tin mượn sách và trả sách
         System.out.println("\n");
-        System.out.println("Độc giả mượn sách:");
-        BorrowSlip slip1 = librarian.borrowBook(reader1, book1, 1, "2024-06-01", "2024-06-10");
-        BorrowSlip slip2 = librarian.borrowBook(reader2, book2, 2, "2024-06-01", "2024-06-05");
+        System.out.println("Thông tin độc giả:" + reader1.getInfo());
+        System.out.println("Thông tin sách trước khi mượn:" + book1.getInfo());
+        BorrowSlip slip1 = librarian.borrowBook(reader1, book1, 1, "2024-06-01", "2024-06-12");
+        System.out.println("Thông tin phiếu mượn:" + slip1.getInfo());
+        System.out.println("Thông tin sách sau khi mượn:" + book1.getInfo());
+        System.out.println("Độc giả trả sách:");
+        librarian.returnBook(slip1, "2024-06-12"); // Trả sách muộn
+        System.out.println("Thông tin sách sau khi trả:" + book1.getInfo());
+        System.out.println("-----------------------------------------------");
 
-        // // Độc giả trả sách
-        // System.out.println("\n");
-        // System.out.println("Độc giả trả sách:");
-        // librarian.returnBook(slip1, "2024-06-12"); // Trả sách muộn
-        // librarian.returnBook(slip2, "2024-06-04"); // Trả sách đúng hạn
-
-        // // Hiển thị thông tin sách và độc giả sau khi mượn và trả sách
-        // System.out.println("\n");
-        // System.out.println("Thông tin sách và độc giả:");
-        // System.out.println(book1.getInfo());
-        // System.out.println(book2.getInfo());
-        // System.out.println(reader1.getInfo());
-        // System.out.println(reader2.getInfo());
-
-        // // Hiển thị thông tin phiếu mượn
-        // System.out.println("\n");
-        // System.out.println("Thông tin phiếu mượn:");
-        // System.out.println(slip1.getInfo());
-        // System.out.println(slip2.getInfo());
+        // Hiển thị thong tin mượn sách và trả sách
+        System.out.println("\n");
+        System.out.println("Thông tin độc giả: " + reader2.getInfo());
+        System.out.println("Thông tin sách trước khi mượn: " + book2.getInfo());
+        BorrowSlip slip2 = librarian.borrowBook(reader2, book2, 2, "2024-06-01", "2026-06-04");
+        System.out.println("Thông tin phiếu mượn: " + slip2.getInfo());
+        System.out.println("Thông tin sách sau khi mượn: " + book2.getInfo());
+        System.out.println("Độc giả trả sách: ");
+        librarian.returnBook(slip2, "2026-05-26"); // Trả sách đúng hạn
+        System.out.println("Thông tin sách sau khi trả: " + book2.getInfo());
+        System.out.println("-----------------------------------------------");
+        
 
     }
 }

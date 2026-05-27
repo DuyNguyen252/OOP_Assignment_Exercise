@@ -17,10 +17,6 @@ public class Book {
         this.totalBooks = totalBooks;
     }
 
-    public Book(int i, String string, String string2, int j, int k) {
-        //TODO Auto-generated constructor stub
-    }
-
     // Getters and Setters
     public int getBookId() {
         return bookId;
@@ -57,17 +53,6 @@ public class Book {
     public void setTotalBooks(int totalBooks) {
         this.totalBooks = totalBooks;
     }
-
-
-    // public boolean isAvailable() {
-    //     return true;
-    // }
-
-    // public void decreaseQuantity() {
-    //     this.totalBooks--;
-    //     System.out.println("Số lượng sách đã giảm đi 1");
-    // }
-
 
     // Method
     public String getInfo() {

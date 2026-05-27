@@ -58,10 +58,10 @@ public class Reader {
 
     //method
     public String getInfo() {
-        return "AnDy: " + readerId
-            + ", " + fullName
-            + ", " + Email
-            + ", " + TypeOfReader
-            + ", " + registerDate;
+        return "ID: " + readerId
+            + ", Name: " + fullName
+            + ", Email: " + Email
+            + ", Type: " + TypeOfReader
+            + ", Register Date: " + registerDate;
     }
 }

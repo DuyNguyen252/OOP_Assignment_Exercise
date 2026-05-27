@@ -20,6 +20,7 @@ public class BorrowSlip {
     public int getSlipId() {
         return slipId;
     }
+
     public void setSlipId(int slipId) {
         this.slipId = slipId;
     }
@@ -27,6 +28,7 @@ public class BorrowSlip {
     public Reader getReader() {
         return reader;
     }
+
     public void setReader(Reader reader) {
         this.reader = reader;
     }
@@ -34,6 +36,7 @@ public class BorrowSlip {
     public Book getBook() {
         return book;
     }
+
     public void setBook(Book book) {
         this.book = book;
     }
@@ -41,6 +44,7 @@ public class BorrowSlip {
     public String getBorrowDate() {
         return borrowDate;
     }
+
     public void setBorrowDate(String borrowDate) {
         this.borrowDate = borrowDate;
     }
@@ -48,6 +52,7 @@ public class BorrowSlip {
     public String getDueDate() {
         return dueDate;
     }
+
     public void setDueDate(String dueDate) {
         this.dueDate = dueDate;
     }
@@ -55,9 +60,9 @@ public class BorrowSlip {
     // Method
     public String getInfo() {
         return "Borrow Slip ID: " + slipId
-            + ", Reader: " + reader.getFullName()
-            + ", Book: " + book.getTitle()
-            + ", Borrow Date: " + borrowDate
-            + ", Due Date: " + dueDate;
+                + ", Reader: " + reader.getFullName()
+                + ", Book: " + book.getTitle()
+                + ", Borrow Date: " + borrowDate
+                + ", Due Date: " + dueDate;
     }
 }
