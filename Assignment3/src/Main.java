@@ -2,6 +2,7 @@ import service.Librarian;
 import model.Book;
 import model.Reader;
 import model.BorrowSlip;
+import service.Library;
 
 public class Main {
     public static void main(String[] args) {
@@ -48,7 +49,25 @@ public class Main {
         librarian.returnBook(slip2, "2026-05-26"); // Trả sách đúng hạn
         System.out.println("Thông tin sách sau khi trả: " + book2.getInfo());
         System.out.println("-----------------------------------------------");
-        
+
+        //tìm kiếm sách theo tên
+        System.err.println("\n");
+        System.out.println("Tìm kiếm sách theo tên:");
+        Library library = new Library();
+        library.addBook(book1);
+        library.addBook(book2);
+        Book searchResult = library.searchBookByTitle("Nghĩ giàu làm giàu");
+        if (searchResult != null) {
+            System.out.println("Tìm thấy sách: " + searchResult.getInfo());
+        } else {
+            System.out.println("Không tìm thấy sách.");
+        }
+        Book searchResult2 = library.searchBookByTitle("Đọc vị bất kỳ ai");
+        if (searchResult2 != null) {
+            System.out.println("Tìm thấy sách: " + searchResult2.getInfo());
+        } else {
+            System.out.println("Không tìm thấy sách.");
+        }
 
     }
 }
