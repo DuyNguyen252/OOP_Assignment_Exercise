@@ -1,4 +1,5 @@
 package main.java.com.app;
+
 import main.java.com.model.*;
 import main.java.com.service.*;
 
@@ -10,6 +11,8 @@ public class Main {
         // Tạo một số sách
         Book book1 = new Book(1, "Nghĩ giàu làm giàu", "napoleon hill", "1937", 100);
         Book book2 = new Book(2, "Đọc vị bất kỳ ai", "Lieberman", "2024", 50);
+        Book book3 = new Book(3, "Biệt kích lính dù", "Stephen Ambrose", "2001", 150);
+        Book book4 = new Book(4, "The Prince (Quân vương)", "Niccolo Machiavelli", "1532", 120);
 
         // Tạo một số độc giả
         Reader reader1 = new Reader(1,
@@ -24,7 +27,23 @@ public class Main {
                 Reader.TypeOfReader.SinhVien,
                 "2024-06-01");
 
-        // Hiển thị thong tin mượn sách và trả sách
+        Student reader3 = new Student(3,
+                "UTE",
+                "bob@example.com",
+                Reader.TypeOfReader.SinhVien,
+                "2024-06-01",
+                "SinhVien03",
+                "SinhVien");
+
+        Lecturer reader4 = new Lecturer(4,
+                "UTE-Lecturer",
+                "bob@example.com",
+                Reader.TypeOfReader.GiaoVien,
+                "2024-06-01",
+                "GiaoVien",
+                "GiaoVien");
+
+        // Hiển thị thong tin reader1 mượn sách và trả sách
         System.out.println("\n");
         System.out.println("Thông tin độc giả:" + reader1.getInfo());
         System.out.println("Thông tin sách trước khi mượn:" + book1.getInfo());
@@ -36,7 +55,7 @@ public class Main {
         System.out.println("Thông tin sách sau khi trả:" + book1.getInfo());
         System.out.println("-----------------------------------------------");
 
-        // Hiển thị thong tin mượn sách và trả sách
+        // Hiển thị thong tin reader2 mượn sách và trả sách
         System.out.println("\n");
         System.out.println("Thông tin độc giả: " + reader2.getInfo());
         System.out.println("Thông tin sách trước khi mượn: " + book2.getInfo());
@@ -46,6 +65,30 @@ public class Main {
         System.out.println("Độc giả trả sách: ");
         librarian.returnBook(slip2, "2026-05-26"); // Trả sách đúng hạn
         System.out.println("Thông tin sách sau khi trả: " + book2.getInfo());
+        System.out.println("-----------------------------------------------");
+
+        // Hiển thị thong tin reader3 mượn sách và trả sách Phuong Thuc Extends
+        System.out.println("\n");
+        System.out.println("Thông tin độc giả:" + reader3.getInfo());
+        System.out.println("Thông tin sách trước khi mượn:" + book1.getInfo());
+        BorrowSlip slip3 = librarian.borrowBook(reader3, book1, 1, "2024-06-01", "2024-06-12");
+        System.out.println("Thông tin phiếu mượn:" + slip3.getInfo());
+        System.out.println("Thông tin sách sau khi mượn:" + book1.getInfo());
+        System.out.println("Độc giả trả sách:");
+        librarian.returnBook(slip1, "2024-06-12"); // Trả sách muộn
+        System.out.println("Thông tin sách sau khi trả:" + book1.getInfo());
+        System.out.println("-----------------------------------------------");
+
+        // Hiển thị thong tin reader3 mượn sách và trả sách Phuong Thuc Extends
+        System.out.println("\n");
+        System.out.println("Thông tin độc giả:" + reader4.getInfo());
+        System.out.println("Thông tin sách trước khi mượn:" + book1.getInfo());
+        BorrowSlip slip4 = librarian.borrowBook(reader4, book1, 1, "2024-06-01", "2024-06-12");
+        System.out.println("Thông tin phiếu mượn:" + slip4.getInfo());
+        System.out.println("Thông tin sách sau khi mượn:" + book1.getInfo());
+        System.out.println("Độc giả trả sách:");
+        librarian.returnBook(slip4, "2024-06-12"); // Trả sách muộn
+        System.out.println("Thông tin sách sau khi trả:" + book1.getInfo());
         System.out.println("-----------------------------------------------");
 
         // tìm kiếm sách theo tên

@@ -55,7 +55,6 @@ public class Reader {
         this.TypeOfReader = TypeOfReader;
     }
 
-
     //method
     public String getInfo() {
         return "ID: " + readerId
@@ -64,4 +63,9 @@ public class Reader {
             + ", Type: " + TypeOfReader
             + ", Register Date: " + registerDate;
     }
+
+    public int getMaxBorrow() {
+        return 0;
+    }
+
 }
