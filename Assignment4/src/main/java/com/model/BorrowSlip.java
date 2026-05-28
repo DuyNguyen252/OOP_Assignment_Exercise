@@ -1,4 +1,4 @@
-package model;
+package main.java.com.model;
 
 public class BorrowSlip {
     private int slipId;

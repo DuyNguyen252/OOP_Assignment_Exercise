@@ -1,6 +1,6 @@
 import service.Librarian;
-import model.Book;
 import model.Reader;
+import main.java.com.model.Book;
 import model.BorrowSlip;
 import service.Library;
 
@@ -50,7 +50,7 @@ public class Main {
         System.out.println("Thông tin sách sau khi trả: " + book2.getInfo());
         System.out.println("-----------------------------------------------");
 
-        //tìm kiếm sách theo tên
+        // tìm kiếm sách theo tên
         System.err.println("\n");
         System.out.println("Tìm kiếm sách theo tên:");
         Library library = new Library();
@@ -68,6 +68,28 @@ public class Main {
         } else {
             System.out.println("Không tìm thấy sách.");
         }
+
+        // quản lý thêm sách và độc giả
+        System.err.println("\n");
+        System.out.println("Quản lý sách và độc giả:");
+        library.addBook(new Book(3, "Sách mới", "Tác giả mới", "2024", 30));
+        System.out.println("Danh sách sách:");
+        library.getBooks();
+
+        System.err.println("\n");
+        library.registerReader(new Reader(3, "Độc giả mới", "newreader@example.com", Reader.TypeOfReader.SinhVien, "2024-06-01"));
+        System.out.println("Danh sách độc giả:");
+        library.getReaders();
+
+     
+        
+
+        // quản lý mượn sách
+        System.err.println("\n");
+        System.out.println("Quản lý mượn sách:");
+        library.borrowBook(librarian, reader1, book1, 7, "2024-06-01", "2024-06-10"); // Mượn sách với ngày đến hạn đã
+        library.borrowBook(librarian, reader2, book2, 8, "2024-06-01", "2024-06-15"); // Mượn sách với ngày đến hạn chưa
+        library.listOverdueBooks(); // Hiển thị sách quá hạn
 
     }
 }

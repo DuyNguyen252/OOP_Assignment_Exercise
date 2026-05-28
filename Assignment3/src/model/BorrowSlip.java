@@ -1,5 +1,7 @@
 package model;
 
+import main.java.com.model.Book;
+
 public class BorrowSlip {
     private int slipId;
     private Reader reader;

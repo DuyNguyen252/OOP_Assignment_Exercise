@@ -1,9 +1,10 @@
 package service;
-import model.Book;
 import model.BorrowSlip;
 import model.Reader;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+
+import main.java.com.model.Book;
 
 public class Librarian {
 

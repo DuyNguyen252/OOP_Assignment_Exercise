@@ -1,9 +1,9 @@
-package service;
+package main.java.com.service;
+
+import main.java.com.model.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import model.Book;
-import model.Reader;
-import model.BorrowSlip;
+
 
 public class Library {
     private ArrayList<Book> books;
@@ -23,10 +23,22 @@ public class Library {
         System.out.println("Added book: " + book.getTitle());
     }
 
+    public void getBooks() {
+        for (Book book : books) {
+            System.out.println("Book: " + book.getTitle());
+        }
+    }
+
     // Quản lý độc giả
     public void registerReader(Reader reader) {
         readers.add(reader);
         System.out.println("Registered reader: " + reader.getFullName());
+    }
+
+    public void getReaders() {
+        for (Reader reader : readers) {
+            System.out.println("Registered reader: " + reader.getFullName());
+        }
     }
 
     // Quản lý mượn sách
