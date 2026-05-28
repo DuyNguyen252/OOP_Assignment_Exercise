@@ -26,6 +26,6 @@ public class Lecturer extends Reader {
 
     @Override
     public int getMaxBorrow() {
-        return 5;    
+        return 5;
     }
 }

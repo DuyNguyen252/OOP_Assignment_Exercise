@@ -130,5 +130,12 @@ public class Main {
         library.borrowBook(librarian, reader2, book2, 8, "2024-06-01", "2024-06-15"); // Mượn sách với ngày đến hạn chưa
         library.listOverdueBooks(); // Hiển thị sách quá hạn
 
+        // test getMaxBorrow
+        System.err.println("\n");
+        Student st = new Student(5, "Nguyen Anh Duy", "bob@example.com", null, "2024-06-01", null, null);
+        System.out.println(st.getMaxBorrow());// 3
+
+        Lecturer lt = new Lecturer(6, "Nguyen Anh Duy", "bob@example.com", null, "2024-06-01", null, null);
+        System.out.println(lt.getMaxBorrow());// 5
     }
 }
