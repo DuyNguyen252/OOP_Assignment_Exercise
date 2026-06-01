@@ -22,27 +22,36 @@ public class Main {
             6000000,
             365
             );
+        
+
+        Member vip2 = new Membership(
+            2,
+            "Binh",
+            "0123456789",
+            "2024-06-01",
+            yearly) {
+        };
 
 
         // tao cac hoi vien
-        Member member1 = new Member(
-            1,
-            "AnDy",
-            "0123456789",
-            "2024-06-01",
-            monthly
-        );
+        // Member member1 = new Member(
+        //     1,
+        //     "AnDy",
+        //     "0123456789",
+        //     "2024-06-01",
+        //     monthly
+        // );
 
-        Member member2 = new Member(
-                2,
-                "Binh",
-                "0123456789",
-                "2024-06-01",
-                yearly);
+        // Member member2 = new Member(
+        //         2,
+        //         "Binh",
+        //         "0123456789",
+        //         "2024-06-01",
+        //         yearly);
 
         // them hoi vien vao he thong quan ly
-        manager.addMember(member1);
-        manager.addMember(member2);
+        // manager.addMember(member1);
+        // manager.addMember(member2);
 
         // su dung cac chuc nang cua quan ly
         System.out.println("\n");
@@ -69,9 +78,9 @@ public class Main {
         System.out.println("Tong so hoi vien: " + GymManager.getTotalMember());
 
         // cap nhat thong tin hoi vien
-            member1.setPhone("0987654321");
-            System.out.println("Thong tin hoi vien sau khi cap nhat:");
-            System.out.println(member1.getInfo());
+            // member1.setPhone("0987654321");
+            // System.out.println("Thong tin hoi vien sau khi cap nhat:");
+            // System.out.println(member1.getInfo());
 
         // kiem tra lien ket giua hoi vien va goi tap
         System.out.println("\n");

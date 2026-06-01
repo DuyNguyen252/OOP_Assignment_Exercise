@@ -55,5 +55,10 @@ public class Membership {
         return "[ "+ packageId +", " + packageName + "," + price + "," + durationDays + " ]";
     }
 
+    @Override
+    public String toString() {
+        return "Membership [packageId=" + packageId + ", packageName=" + packageName + ", price=" + price
+                + ", durationDays=" + durationDays + "]";
+    }
     
 }

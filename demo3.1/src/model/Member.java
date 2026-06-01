@@ -1,6 +1,6 @@
 package model;
 
-public class Member {
+public abstract class Member {
     private int memberId;
     private String fullName;
     private String phone;
@@ -52,14 +52,26 @@ public class Member {
         this.membership = membership;
     }
 
-    public String getInfo() {
-        String mName = (membership== null)
-            ? "Chua dang ky goi tap"
-            : membership.getPackageName();
-        return "AnDy: " + memberId
-            + ", " + fullName
-            + ", " + phone
-            + ", " + registerDate
-            + ", " + mName;
+    // public String getInfo() {
+    //     String mName = (membership== null)
+    //         ? "Chua dang ky goi tap"
+    //         : membership.getPackageName();
+    //     return "AnDy: " + memberId
+    //         + ", " + fullName
+    //         + ", " + phone
+    //         + ", " + registerDate
+    //         + ", " + mName;
+    // }
+
+
+    public abstract String getInfo();
+    public abstract double calculateMonthlyFee();
+
+
+
+    @Override
+    public String toString() {
+        return "Member [memberId=" + memberId + ", fullName=" + fullName + ", phone=" + phone + ", registerDate="
+                + registerDate + ", membership=" + membership.getPackageName() + "]";
     }
 }
