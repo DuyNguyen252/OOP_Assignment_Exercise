@@ -137,5 +137,8 @@ public class Main {
 
         Lecturer lt = new Lecturer(6, "Nguyen Anh Duy", "bob@example.com", null, "2024-06-01", null, null);
         System.out.println(lt.getMaxBorrow());// 5
+
+
+        
     }
 }
