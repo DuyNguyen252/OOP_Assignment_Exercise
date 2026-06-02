@@ -24,14 +24,6 @@ public class Main {
             );
         
 
-        Member vip2 = new Membership(
-            2,
-            "Binh",
-            "0123456789",
-            "2024-06-01",
-            yearly) {
-        };
-
 
         // tao cac hoi vien
         // Member member1 = new Member(
