@@ -19,14 +19,30 @@ public class Student extends Reader {
 
     public String getStudentEx() { return studentEx; }
 
-    @Override
-    public String toString() {
-        return super.toString() + "| SinhVien" + studentEx;
-    }
+
+    
+    // @Override
+    // public String toString() {
+    //     return super.getInfo() + "| SinhVien" + studentEx;
+    // }
 
     @Override
     public int getMaxBorrow() {
         return 3;
     }
 
+    @Override
+    public double calculateFine(int borrowDate, int dueDate) {
+        return dueDate > borrowDate ? (dueDate - borrowDate) * 2000 : 0.0; // Ví dụ: 2000 VND/ngày trễq
+    }
+
+    @Override
+    public String getInfo() {
+        return "ID: " + getReaderId()
+            + ", Name: " + getFullName()
+            + ", Email: " + getEmail()
+            + ", Type: " + get_type()
+            + ", Register Date: " + getRegisterDate()
+            + "| SinhVien" + studentEx;
+    }
 }

@@ -1,14 +1,15 @@
 package main.java.com.model;
 
 
-public class Reader {
+    public abstract class Reader {
     private int readerId;
     private String fullName;
     private String Email;
-    public enum TypeOfReader { GiaoVien, SinhVien }
+    public enum TypeOfReader { GiangVien, SinhVien }
     private String registerDate;
     private TypeOfReader TypeOfReader;
     
+    // public abstract void Readers();
     
 //constructor
     public Reader(int readerId, String fullName, String Email, TypeOfReader TypeOfReader, String registerDate) {
@@ -56,16 +57,21 @@ public class Reader {
     }
 
     //method
-    public String getInfo() {
-        return "ID: " + readerId
-            + ", Name: " + fullName
-            + ", Email: " + Email
-            + ", Type: " + TypeOfReader
-            + ", Register Date: " + registerDate;
-    }
+    // public String getInfo() {
+    //     return "ID: " + readerId
+    //         + ", Name: " + fullName
+    //         + ", Email: " + Email
+    //         + ", Type: " + TypeOfReader
+    //         + ", Register Date: " + registerDate;
+    // }
 
-    public int getMaxBorrow() {
-        return 0;
-    }
+
+
+    
+
+    public abstract int getMaxBorrow();
+    public abstract double calculateFine(int borrowDate, int dueDate);
+    public abstract String getInfo();
+
 
 }

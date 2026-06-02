@@ -15,17 +15,17 @@ public class Main {
         Book book4 = new Book(4, "The Prince (Quân vương)", "Niccolo Machiavelli", "1532", 120);
 
         // Tạo một số độc giả
-        Reader reader1 = new Reader(1,
-                "Thầy Phúc",
-                "alice@example.com",
-                Reader.TypeOfReader.GiaoVien,
-                "2024-06-01");
+        // Reader reader1 = new Reader(1,
+        //         "Thầy Phúc",
+        //         "alice@example.com",
+        //         Reader.TypeOfReader.GiangVien,
+        //         "2024-06-01");
 
-        Reader reader2 = new Reader(2,
-                "Andy",
-                "bob@example.com",
-                Reader.TypeOfReader.SinhVien,
-                "2024-06-01");
+        // Reader reader2 = new Reader(2,
+        //         "Andy",
+        //         "bob@example.com",
+        //         Reader.TypeOfReader.SinhVien,
+        //         "2024-06-01");
 
         Student reader3 = new Student(3,
                 "UTE",
@@ -38,32 +38,34 @@ public class Main {
         Lecturer reader4 = new Lecturer(4,
                 "UTE-Lecturer",
                 "bob@example.com",
-                Reader.TypeOfReader.GiaoVien,
+                Reader.TypeOfReader.GiangVien,
                 "2024-06-01",
-                "GiaoVien",
-                "GiaoVien");
+                "GiangVien",
+                "GiangVien");
+        
+
 
         // Hiển thị thong tin reader1 mượn sách và trả sách
         System.out.println("\n");
-        System.out.println("Thông tin độc giả:" + reader1.getInfo());
+        // System.out.println("Thông tin độc giả:" + reader1.getInfo());
         System.out.println("Thông tin sách trước khi mượn:" + book1.getInfo());
-        BorrowSlip slip1 = librarian.borrowBook(reader1, book1, 1, "2024-06-01", "2024-06-12");
-        System.out.println("Thông tin phiếu mượn:" + slip1.getInfo());
+        // BorrowSlip slip1 = librarian.borrowBook(reader1, book1, 1, "2024-06-01", "2024-06-12");
+        // System.out.println("Thông tin phiếu mượn:" + slip1.getInfo());
         System.out.println("Thông tin sách sau khi mượn:" + book1.getInfo());
         System.out.println("Độc giả trả sách:");
-        librarian.returnBook(slip1, "2024-06-12"); // Trả sách muộn
+        // librarian.returnBook(slip1, "2024-06-12"); // Trả sách muộn
         System.out.println("Thông tin sách sau khi trả:" + book1.getInfo());
         System.out.println("-----------------------------------------------");
 
         // Hiển thị thong tin reader2 mượn sách và trả sách
         System.out.println("\n");
-        System.out.println("Thông tin độc giả: " + reader2.getInfo());
+        // System.out.println("Thông tin độc giả: " + reader2.getInfo());
         System.out.println("Thông tin sách trước khi mượn: " + book2.getInfo());
-        BorrowSlip slip2 = librarian.borrowBook(reader2, book2, 2, "2024-06-01", "2026-06-04");
-        System.out.println("Thông tin phiếu mượn: " + slip2.getInfo());
+        // BorrowSlip slip2 = librarian.borrowBook(reader2, book2, 2, "2024-06-01", "2026-06-04");
+        // System.out.println("Thông tin phiếu mượn: " + slip2.getInfo());
         System.out.println("Thông tin sách sau khi mượn: " + book2.getInfo());
         System.out.println("Độc giả trả sách: ");
-        librarian.returnBook(slip2, "2026-05-26"); // Trả sách đúng hạn
+        // librarian.returnBook(slip2, "2026-05-26"); // Trả sách đúng hạn
         System.out.println("Thông tin sách sau khi trả: " + book2.getInfo());
         System.out.println("-----------------------------------------------");
 
@@ -75,7 +77,7 @@ public class Main {
         System.out.println("Thông tin phiếu mượn:" + slip3.getInfo());
         System.out.println("Thông tin sách sau khi mượn:" + book1.getInfo());
         System.out.println("Độc giả trả sách:");
-        librarian.returnBook(slip1, "2024-06-12"); // Trả sách muộn
+        // librarian.returnBook(slip1, "2024-06-12"); // Trả sách muộn
         System.out.println("Thông tin sách sau khi trả:" + book1.getInfo());
         System.out.println("-----------------------------------------------");
 
@@ -92,7 +94,7 @@ public class Main {
         System.out.println("-----------------------------------------------");
 
         // tìm kiếm sách theo tên
-        System.err.println("\n");
+        System.out.println("\n");
         System.out.println("Tìm kiếm sách theo tên:");
         Library library = new Library();
         library.addBook(book1);
@@ -118,27 +120,59 @@ public class Main {
         library.getBooks();
 
         System.err.println("\n");
-        library.registerReader(
-                new Reader(3, "Độc giả mới", "newreader@example.com", Reader.TypeOfReader.SinhVien, "2024-06-01"));
+        // library.registerReader(
+                // new Reader(3, "Độc giả mới", "newreader@example.com", Reader.TypeOfReader.SinhVien, "2024-06-01"));
         System.out.println("Danh sách độc giả:");
         library.getReaders();
 
         // quản lý mượn sách
         System.err.println("\n");
         System.out.println("Quản lý mượn sách:");
-        library.borrowBook(librarian, reader1, book1, 7, "2024-06-01", "2024-06-10"); // Mượn sách với ngày đến hạn đã
-        library.borrowBook(librarian, reader2, book2, 8, "2024-06-01", "2024-06-15"); // Mượn sách với ngày đến hạn chưa
+        // library.borrowBook(librarian, reader1, book1, 7, "2024-06-01", "2024-06-10"); // Mượn sách với ngày đến hạn đã
+        // library.borrowBook(librarian, reader2, book2, 8, "2024-06-01", "2024-06-15"); // Mượn sách với ngày đến hạn chưa
         library.listOverdueBooks(); // Hiển thị sách quá hạn
 
         // test getMaxBorrow
         System.err.println("\n");
-        Student st = new Student(5, "Nguyen Anh Duy", "bob@example.com", null, "2024-06-01", null, null);
+        Student st = new Student(5, "Nguyen Anh Duy", "bob@example.com", Reader.TypeOfReader.SinhVien, "2024-06-01", null, null);
         System.out.println(st.getMaxBorrow());// 3
 
-        Lecturer lt = new Lecturer(6, "Nguyen Anh Duy", "bob@example.com", null, "2024-06-01", null, null);
+        Lecturer lt = new Lecturer(6, "GiangVienHCMUTE", "bob@example.com", Reader.TypeOfReader.GiangVien, "2024-06-01", null, null);
         System.out.println(lt.getMaxBorrow());// 5
 
 
-        
+        // test toString
+        System.out.println(st.toString());
+        System.out.println(lt.toString());
+
+        //test calculateFine
+        System.out.println("Tiền phạt của sinh viên: " + st.calculateFine(10, 15)); // 10000 VND
+        System.out.println("Tiền phạt của giảng viên: " + lt.calculateFine(10, 15)); // 5000 VND
+
+
+        // test abstract method getInfo
+        System.out.println("Thông tin sinh viên: " + st.getInfo());
+        System.out.println("Thông tin giảng viên: " + lt.getInfo());
+
+
     }
 }
+
+
+/* Trả lời B1:
+ Nhiệm vụ: Thêm từ khóa abstract vào khai báo class Reader.
+ Kiểm tra: Thử viết Reader r = new Reader("R001","Nguyen","a@b.com"); trong Main. Có báo lỗi biên dịch không? 
+ Chắc chắn có vì khi khai báo một class là abstract thì không thể tạo đối tượng trực tiếp từ class đó được. 
+// Bạn sẽ nhận được lỗi biên dịch nếu cố gắng tạo một đối tượng từ một class abstract.
+
+Trong thực tế thì khi một người bước vào thư viện mượn sách, họ phải thuộc 1 trong những đối tượng cụ thể để thư viện dễ quản lí như SinhVien or GiangVien.
+chứ trong thẻ thư viện không có ai đăng ký 1 độc giả chung chung nào cả. */
+
+/*  
+
+
+
+
+*/
+
+

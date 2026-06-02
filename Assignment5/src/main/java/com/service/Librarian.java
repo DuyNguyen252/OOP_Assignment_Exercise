@@ -6,7 +6,6 @@ import java.time.temporal.ChronoUnit;
 
 
 public class Librarian {
-
     public BorrowSlip borrowBook(Reader reader, Book book, int slipId, String borrowDate, String dueDate) {
 
         // Mượn sách
