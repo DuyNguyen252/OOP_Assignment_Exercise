@@ -1,6 +1,7 @@
 package main.java.com.app;
 
 import main.java.com.model.*;
+import main.java.com.model.Reader.TypeOfReader;
 import main.java.com.service.*;
 
 public class Main {
@@ -132,10 +133,16 @@ public class Main {
 
         // test getMaxBorrow
         System.err.println("\n");
-        Student st = new Student(5, "Nguyen Anh Duy", "bob@example.com", null, "2024-06-01", null, null);
+        Student st = new Student(5, "Nguyen Anh Duy", "bob@example.com", TypeOfReader.SinhVien, "2024-06-01", null, null);
         System.out.println(st.getMaxBorrow());// 3
 
-        Lecturer lt = new Lecturer(6, "Nguyen Anh Duy", "bob@example.com", null, "2024-06-01", null, null);
+        Lecturer lt = new Lecturer(6, "GiangVienHCMUTEE", "bob@example.com", TypeOfReader.GiaoVien, "2024-06-01", null, null);
         System.out.println(lt.getMaxBorrow());// 5
+
+         // test toString
+        System.err.println("\n");
+        System.out.println(st.toString());
+        System.out.println(lt.toString()); 
+
     }
 }

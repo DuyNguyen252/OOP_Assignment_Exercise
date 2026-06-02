@@ -21,7 +21,7 @@ public class Student extends Reader {
 
     @Override
     public String toString() {
-        return super.toString() + "| SinhVien" + studentEx;
+        return super.getInfo() + "| SinhVien" + studentEx;
     }
 
     @Override
