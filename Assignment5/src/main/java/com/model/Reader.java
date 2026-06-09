@@ -56,6 +56,7 @@ package main.java.com.model;
         this.TypeOfReader = TypeOfReader;
     }
 
+    
     //method
     // public String getInfo() {
     //     return "ID: " + readerId

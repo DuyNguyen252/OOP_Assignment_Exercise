@@ -155,6 +155,39 @@ public class Main {
         System.out.println("Thông tin giảng viên: " + lt.getInfo());
 
 
+
+        // B5: ASM5
+        System.out.println(" B5: ASM5 ");
+
+        Reader sv = new Student(3,
+                "UTE SinhVien",
+                "bob@example.com",
+                Reader.TypeOfReader.SinhVien,
+                "2024-06-01",
+                "SinhVien03",
+                "SinhVien");
+
+        Reader gv = new Lecturer(4,
+                "UTE-GiangVien",
+                "bob@example.com",
+                Reader.TypeOfReader.GiangVien,
+                "2024-06-01",
+                "GiangVien04",
+                "GiangVien");
+
+        Library lib = new Library();
+        lib.addBook(book1); lib.addBook(book2); 
+        lib.registerReader(sv);lib.registerReader(gv);
+
+        lib.showAllBooks(); 
+        lib.showAllReaders(); // Gọi getInfo() — Student vs Lecturer 
+        lib.showLateFees(7,14);  // Gọi calculateLateFee() — khác nhau mỗi loại 
+
+        System.out.println("\nHan muon:"); 
+        Reader[] readers = { sv, gv }; 
+        for (Reader r : readers) { 
+            System.out.println(r.getFullName() + ": " + r.getMaxBorrow() + "cuon"); 
+        }
     }
 }
 
@@ -168,11 +201,6 @@ public class Main {
 Trong thực tế thì khi một người bước vào thư viện mượn sách, họ phải thuộc 1 trong những đối tượng cụ thể để thư viện dễ quản lí như SinhVien or GiangVien.
 chứ trong thẻ thư viện không có ai đăng ký 1 độc giả chung chung nào cả. */
 
-/*  
 
-
-
-
-*/
 
 

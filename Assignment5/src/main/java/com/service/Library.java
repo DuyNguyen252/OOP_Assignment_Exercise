@@ -61,6 +61,13 @@ public class Library {
         return null; // Không tìm thấy sách
     }
 
+    public void showAllBooks() {
+        System.out.println("=== DANH SACH SACH ===");
+        for (Book book : books) {
+            System.out.println(book.getInfo());
+        }
+    }
+
     // thống sách quá hạn
     public void listOverdueBooks() {
         LocalDate currentDate = LocalDate.now();
@@ -71,6 +78,23 @@ public class Library {
                 System.out.println("Sách: " + slip.getBook().getTitle() + ", Người mượn: "
                         + slip.getReader().getFullName() + ", Ngày đến hạn: " + slip.getDueDate());
             }
+        }
+    }
+
+    public void showLateFees(int borrowDate, int dueDate) {
+        int daysLate = dueDate - borrowDate;
+        System.out.println("=== PHI PHAT TRE HAN === (" + daysLate + " ngày trễ)");
+        for (Reader r : readers) {
+            System.out.printf(" %-25s | Fee: %,.0f VND%n",
+                    r.getFullName(), r.calculateFine(borrowDate, dueDate));
+        }
+        
+    }
+
+    public void showAllReaders() {
+        System.out.println("=== DANH SACH DOC GIA ===");
+        for (Reader r : readers) {
+            System.out.println(r.getInfo()); // Đa hình: tự gọi đúng lớp con
         }
     }
 
