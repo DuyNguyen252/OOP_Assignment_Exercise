@@ -11,8 +11,8 @@ public class Main {
         // Tạo một số sách
         Book book1 = new Book(1, "Nghĩ giàu làm giàu", "napoleon hill", "1937", 100);
         Book book2 = new Book(2, "Đọc vị bất kỳ ai", "Lieberman", "2024", 50);
-        Book book3 = new Book(3, "Biệt kích lính dù", "Stephen Ambrose", "2001", 150);
-        Book book4 = new Book(4, "The Prince (Quân vương)", "Niccolo Machiavelli", "1532", 120);
+        // Book book3 = new Book(3, "Biệt kích lính dù", "Stephen Ambrose", "2001", 150);
+        // Book book4 = new Book(4, "The Prince (Quân vương)", "Niccolo Machiavelli", "1532", 120);
 
         // Tạo một số độc giả
         // Reader reader1 = new Reader(1,
