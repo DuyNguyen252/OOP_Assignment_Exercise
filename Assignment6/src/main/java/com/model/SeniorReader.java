@@ -28,5 +28,4 @@ public class SeniorReader extends Reader {
                 + "| Ma the: " + seniorCardNumber
                 + "[NCT - Mien phi phat]";
     }
-
 }
