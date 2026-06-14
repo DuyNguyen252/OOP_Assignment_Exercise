@@ -30,9 +30,9 @@ public class Library {
     }
 
     // Quản lý độc giả
-    public void registerReader(Reader reader) {
+    public void addReader(Reader reader) {
         readers.add(reader);
-        System.out.println("Registered reader: " + reader.getFullName());
+        System.out.println("Reader: " + reader.getFullName());
     }
 
     public void getReaders() {

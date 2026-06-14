@@ -155,9 +155,35 @@ public class Main {
         System.out.println("Thông tin giảng viên: " + lt.getInfo());
 
 
-        System.out.println("-----------------------------------------------");
+
+        System.out.println("\n");
+        System.out.println("---------------------Assignament06-----------------------");
+        //Assignament06
+        //Tạo thư viện thêm 3 loại sach
+        library.addReader(new StudentReader("001", "NguyenThanhTai", "SV"));
+        library.addReader(new FacultyReader("002", "NguyenAnhDuy", "GV"));
+        library.addReader(new SeniorReader("003", "Andromeda", "NCT"));
+
+        //Yeu cầu 2.1
+        library.printAllReaders();
+        //3 dòng output,
+
+        // Yều cầu 2.2
+        double total = library.calculateTotalLateFee(5);
+        System.out.printf("Tong hinh phat qua 5 ngay %.0f VND %n",total);
+
+        //2.3
+        Reader found = library.findReaderByName("NguyenAndy");
+        if(found != null) {
+            System.out.println(found.getInfo());
+            System.out.println(found.getMaxBorrow());
+        
+        }
 
 
+        //Yêu cầu 2.4:
+        library.printSeniorReaders();
+        
 
 
     }
