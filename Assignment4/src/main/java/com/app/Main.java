@@ -1,7 +1,6 @@
 package main.java.com.app;
 
 import main.java.com.model.*;
-import main.java.com.model.Reader.TypeOfReader;
 import main.java.com.service.*;
 
 public class Main {
@@ -119,8 +118,9 @@ public class Main {
         library.getBooks();
 
         System.err.println("\n");
-        library.registerReader(
-                new Reader(3, "Độc giả mới", "newreader@example.com", Reader.TypeOfReader.SinhVien, "2024-06-01"));
+        // library.registerReader(
+        // new Reader(3, "Độc giả mới", "newreader@example.com",
+        // Reader.TypeOfReader.SinhVien, "2024-06-01"));
         System.out.println("Danh sách độc giả:");
         library.getReaders();
 

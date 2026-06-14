@@ -73,5 +73,10 @@ package main.java.com.model;
     public abstract double calculateFine(int borrowDate, int dueDate);
     public abstract String getInfo();
 
+    
+
+
+
+
 
 }
