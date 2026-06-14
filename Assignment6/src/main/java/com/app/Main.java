@@ -155,6 +155,11 @@ public class Main {
         System.out.println("Thông tin giảng viên: " + lt.getInfo());
 
 
+        System.out.println("-----------------------------------------------");
+
+
+
+
     }
 }
 
