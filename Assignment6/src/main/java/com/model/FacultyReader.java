@@ -1,5 +1,7 @@
 package main.java.com.model;
 
+import main.java.com.service.Library;
+
 public class FacultyReader extends Reader {
     private String facultyCardNumber;
 
@@ -25,7 +27,7 @@ public class FacultyReader extends Reader {
     @Override
     public String getInfo() {
         return "| Ma the: " + facultyCardNumber
-                + "[TypeOrder - Tien phat cua giang vien ]";
+                + "[ " + getFullName() + " - Tien phat cua giang vien ]";
     }
 
 }

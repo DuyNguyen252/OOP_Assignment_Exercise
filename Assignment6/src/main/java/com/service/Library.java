@@ -4,7 +4,6 @@ import main.java.com.model.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-
 public class Library {
     private ArrayList<Book> books;
     private ArrayList<Reader> readers;
@@ -103,16 +102,14 @@ public class Library {
         int count = 0;
         for (Reader r : readers) {
             if (r instanceof SeniorReader) {
-            SeniorReader sr = (SeniorReader) r;
-            System.out.println(sr.getInfo());
-            System.out.println("Ma the NCT" + sr.getSeniorCardNumber()); // method riêng
-            count++;
-          }
-        }  
-        if (count == 0) System.out.println("(Chua coc doc gia NCT)");
+                SeniorReader sr = (SeniorReader) r;
+                System.out.println(sr.getInfo());
+                System.out.println("Ma the NCT" + sr.getSeniorCardNumber()); // method riêng
+                count++;
+            }
+        }
+        if (count == 0)
+            System.out.println("(Chua coc doc gia NCT)");
 
     }
-    
-
- }
-     
+}

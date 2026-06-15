@@ -4,7 +4,7 @@ public class StudentReader extends Reader {
     private String studentCardNumber;
 
     public StudentReader(String readerId, String fullName, String studentCardNumber) {
-        super(Integer.parseInt(readerId), fullName, "",TypeOfReader.SinhVien,"");
+        super(Integer.parseInt(readerId), fullName, "", TypeOfReader.SinhVien, "");
         this.studentCardNumber = studentCardNumber;
     }
 
@@ -14,7 +14,7 @@ public class StudentReader extends Reader {
 
     @Override
     public double calculateFine(int borrowDate, int dueDate) {
-        return 2000.0*(dueDate - borrowDate);
+        return 2000.0 * (dueDate - borrowDate);
     }
 
     @Override
@@ -25,6 +25,6 @@ public class StudentReader extends Reader {
     @Override
     public String getInfo() {
         return "| Ma the: " + studentCardNumber
-                + "[TypeOrder - Tien phat cua sinh vien ]";
+                + "[ " + getFullName() + " - Tien phat cua sinh vien ]";
     }
 }

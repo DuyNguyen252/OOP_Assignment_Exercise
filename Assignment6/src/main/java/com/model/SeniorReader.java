@@ -25,6 +25,6 @@ public class SeniorReader extends Reader {
     @Override
     public String getInfo() {
         return "| Ma the: " + seniorCardNumber
-                + "[NCT - Mien phi phat]";
+                + "[ " + getFullName() + " - Mien phi phat]";
     }
 }
