@@ -30,9 +30,9 @@ public class Library {
     }
 
     // Quản lý độc giả
-    public void registerReader(Reader reader) {
+    public void addReader(Reader reader) {
         readers.add(reader);
-        System.out.println("Registered reader: " + reader.getFullName());
+        System.out.println("Reader: " + reader.getFullName());
     }
 
     public void getReaders() {
@@ -74,4 +74,45 @@ public class Library {
         }
     }
 
-}
+    public void printAllReaders() {
+        System.out.println("Danh sach doc gia (" + readers.size() + " nguoi):");
+        for (Reader r : readers) {
+            System.out.println(r.getInfo());
+        }
+    }
+
+    public double calculateTotalLateFee(int daysLate) {
+        double total = 0;
+        for (Reader r : readers) {
+            total += r.calculateFine(0, daysLate); // Giả sử borrowDate là 0 để tính phí trễ
+        }
+        return total;
+    }
+
+    public Reader findReaderByName(String keyword) {
+        for (Reader r : readers) {
+            if (r.getFullName().toLowerCase().contains(keyword.toLowerCase())) {
+                return r;
+            }
+        }
+        return null;
+    }
+
+    public void printSeniorReaders() {
+        System.out.println("===DOC GIA NGUOI CAO TUOI===");
+        int count = 0;
+        for (Reader r : readers) {
+            if (r instanceof SeniorReader) {
+            SeniorReader sr = (SeniorReader) r;
+            System.out.println(sr.getInfo());
+            System.out.println("Ma the NCT" + sr.getSeniorCardNumber()); // method riêng
+            count++;
+          }
+        }  
+        if (count == 0) System.out.println("(Chua coc doc gia NCT)");
+
+    }
+    
+
+ }
+     

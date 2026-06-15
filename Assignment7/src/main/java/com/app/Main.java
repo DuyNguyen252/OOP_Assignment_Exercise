@@ -11,8 +11,8 @@ public class Main {
         // Tạo một số sách
         Book book1 = new Book(1, "Nghĩ giàu làm giàu", "napoleon hill", "1937", 100);
         Book book2 = new Book(2, "Đọc vị bất kỳ ai", "Lieberman", "2024", 50);
-        Book book3 = new Book(3, "Biệt kích lính dù", "Stephen Ambrose", "2001", 150);
-        Book book4 = new Book(4, "The Prince (Quân vương)", "Niccolo Machiavelli", "1532", 120);
+        // Book book3 = new Book(3, "Biệt kích lính dù", "Stephen Ambrose", "2001", 150);
+        // Book book4 = new Book(4, "The Prince (Quân vương)", "Niccolo Machiavelli", "1532", 120);
 
         // Tạo một số độc giả
         // Reader reader1 = new Reader(1,
@@ -153,6 +153,37 @@ public class Main {
         // test abstract method getInfo
         System.out.println("Thông tin sinh viên: " + st.getInfo());
         System.out.println("Thông tin giảng viên: " + lt.getInfo());
+
+
+
+        System.out.println("\n");
+        System.out.println("---------------------Assignament06-----------------------");
+        //Assignament06
+        //Tạo thư viện thêm 3 loại sach
+        library.addReader(new StudentReader("001", "NguyenThanhTai", "SV"));
+        library.addReader(new FacultyReader("002", "NguyenAnhDuy", "GV"));
+        library.addReader(new SeniorReader("003", "Andromeda", "NCT"));
+
+        //Yeu cầu 2.1
+        library.printAllReaders();
+        //3 dòng output,
+
+        // Yều cầu 2.2
+        double total = library.calculateTotalLateFee(5);
+        System.out.printf("Tong hinh phat qua 5 ngay %.0f VND %n",total);
+
+        //2.3
+        Reader found = library.findReaderByName("NguyenAndy");
+        if(found != null) {
+            System.out.println(found.getInfo());
+            System.out.println(found.getMaxBorrow());
+        
+        }
+
+
+        //Yêu cầu 2.4:
+        library.printSeniorReaders();
+        
 
 
     }
