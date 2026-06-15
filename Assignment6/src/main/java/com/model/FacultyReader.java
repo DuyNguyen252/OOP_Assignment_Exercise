@@ -24,8 +24,7 @@ public class FacultyReader extends Reader {
 
     @Override
     public String getInfo() {
-        return getInfo()
-                + "| Ma the: " + facultyCardNumber
+        return "| Ma the: " + facultyCardNumber
                 + "[TypeOrder - Tien phat cua giang vien ]";
     }
 
