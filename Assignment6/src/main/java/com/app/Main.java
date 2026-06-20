@@ -190,20 +190,4 @@ public class Main {
 }
 
 
-/* Trả lời B1:
- Nhiệm vụ: Thêm từ khóa abstract vào khai báo class Reader.
- Kiểm tra: Thử viết Reader r = new Reader("R001","Nguyen","a@b.com"); trong Main. Có báo lỗi biên dịch không? 
- Chắc chắn có vì khi khai báo một class là abstract thì không thể tạo đối tượng trực tiếp từ class đó được. 
-// Bạn sẽ nhận được lỗi biên dịch nếu cố gắng tạo một đối tượng từ một class abstract.
-
-Trong thực tế thì khi một người bước vào thư viện mượn sách, họ phải thuộc 1 trong những đối tượng cụ thể để thư viện dễ quản lí như SinhVien or GiangVien.
-chứ trong thẻ thư viện không có ai đăng ký 1 độc giả chung chung nào cả. */
-
-/*  
-
-
-
-
-*/
-
 
