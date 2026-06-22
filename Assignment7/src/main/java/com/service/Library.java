@@ -1,6 +1,8 @@
 package main.java.com.service;
 
 import main.java.com.model.*;
+
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -9,12 +11,14 @@ public class Library {
     private ArrayList<Book> books;
     private ArrayList<Reader> readers;
     private ArrayList<BorrowSlip> borrowSlips;
+    private LateFeePolicy    feePolicy;  
 
     // Constructor
     public Library() {
         this.books = new ArrayList<>();
         this.readers = new ArrayList<>();
         this.borrowSlips = new ArrayList<>();
+        feePolicy = new StandardFeePolicy();  
     }
 
     // Quản lý sách
@@ -103,16 +107,80 @@ public class Library {
         int count = 0;
         for (Reader r : readers) {
             if (r instanceof SeniorReader) {
-            SeniorReader sr = (SeniorReader) r;
-            System.out.println(sr.getInfo());
-            System.out.println("Ma the NCT" + sr.getSeniorCardNumber()); // method riêng
-            count++;
-          }
-        }  
-        if (count == 0) System.out.println("(Chua coc doc gia NCT)");
+                SeniorReader sr = (SeniorReader) r;
+                System.out.println(sr.getInfo());
+                System.out.println("Ma the NCT" + sr.getSeniorCardNumber()); // method riêng
+                count++;
+            }
+        }
+        if (count == 0)
+            System.out.println("(Chua coc doc gia NCT)");
 
     }
-    
 
- }
-     
+    // Bước 1: Định nghĩa interface Strategy
+    public interface LateFeePolicy {
+        double applyPolicy(double baseFee);
+
+        String getPolicyName();
+    }
+
+    // Bước 2: Cài đặt các chính sách cụ thể
+    // Chính sách A: Tính phí đầy đủ (bình thường)
+    public class StandardFeePolicy implements LateFeePolicy {
+        @Override
+        public double applyPolicy(double baseFee) {
+            return baseFee;
+        }
+
+        @Override
+        public String getPolicyName() {
+            return "Phi phat tieu chuan (100%)";
+        }
+    }
+
+    // Chính sách B: Tháng từ thiện — giảm 50% phí phạt
+public class CharityFeePolicy implements LateFeePolicy {
+    @Override
+    public double applyPolicy(double baseFee) { return baseFee * 0.5; }
+    @Override
+        public String getPolicyName() { return "Thang tu thien — giam 50%"; }
+}
+ 
+// Chính sách C: Tháng khai trương — miễn phí phạt
+public static class WaivedFeePolicy implements LateFeePolicy {
+    @Override
+    public double applyPolicy(double baseFee) { return 0; }
+    @Override
+    public String getPolicyName() { return "Mien phi phat (thang khai truong)"; }
+}
+ 
+// Bước 3: Library giữ strategy bằng Composition
+
+   
+ 
+    // Hoán đổi chính sách phí — không sửa code Library, chỉ inject strategy mới
+    public void setFeePolicy(LateFeePolicy policy) {
+        this.feePolicy = policy;
+        System.out.println("Cap nhat chinh sach phi phat: " + policy.getPolicyName());
+    }
+ 
+    // Tính tổng phí phạt có áp dụng chính sách hiện tại
+    public double calculateFine(int borrowDate, int dueDate) {
+        double total = 0;
+        for (Reader r : readers) {
+            double baseFee      = r.calculateFine(borrowDate, dueDate); // dynamic binding
+            double adjustedFee  = feePolicy.applyPolicy(baseFee);
+            System.out.printf("  %-20s | Base: %6.0f | Sau CS: %6.0f VND%n",
+                              r.getFullName(), baseFee, adjustedFee);
+            total += adjustedFee;
+        }
+        System.out.printf("Tong phi phat (%s): %.0f VND%n",
+                          feePolicy.getPolicyName(), total);
+        return total;
+    }
+}
+
+
+
+

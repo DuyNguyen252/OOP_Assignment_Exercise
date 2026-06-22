@@ -6,13 +6,14 @@ public class Student extends Reader {
     public Student(int readerId, String fullName, String email,
             TypeOfReader TypeOfReader,
             String registerDate,
-            String studentCode, String studentEx) {
+            String studentCode, String studentEx, int currentBorrowCount) {
 
         super(readerId,
                 fullName,
                 email,
                 TypeOfReader,
-                registerDate);
+                registerDate,
+                currentBorrowCount);
 
         this.studentEx = studentEx;
     }
@@ -45,4 +46,19 @@ public class Student extends Reader {
             + ", Register Date: " + getRegisterDate()
             + "| SinhVien" + studentEx;
     }
+
+    // ... các field và method hiện có ...
+
+    @Override
+    protected boolean checkSpecialCondition(Book book) {
+        // Sinh viên không được mượn sách tham khảo hiếm (referenceOnly = true)
+        return !book.getIsReferenceOnly();
+    }
+
+    @Override
+    protected String getSpecialConditionMessage() {
+        return "Sach tham khao chi doc tai cho — sinh vien khong duoc mang ve";
+    }
+
+
 }

@@ -6,15 +6,19 @@ public class Book {
     private String author;
     private String yearOfPublication;
     private int totalBooks;
+    private int decreaseStock;
+    private boolean isReferenceOnly;
 
 
     // Constructor
-    public Book(int bookId, String title, String author, String yearOfPublication, int totalBooks) {
+    public Book(int bookId, String title, String author, String yearOfPublication, int totalBooks, int decreaseStock, boolean isReferenceOnly) {
         this.bookId = bookId;
         this.title = title;
         this.author = author;
         this.yearOfPublication = yearOfPublication;
         this.totalBooks = totalBooks;
+        this.decreaseStock= decreaseStock;
+        this.isReferenceOnly = isReferenceOnly;
     }
 
     // Getters and Setters
@@ -54,12 +58,31 @@ public class Book {
         this.totalBooks = totalBooks;
     }
 
+    public int getDecreaseStock() {
+        return decreaseStock;
+    }
+
+    public void setDecreaseStock(int decreaseStock) {
+        this.decreaseStock = decreaseStock;
+    }
+
+    public boolean getIsReferenceOnly() {
+        return isReferenceOnly;
+    }
+
+    public void setIsReferenceOnly(boolean isReferenceOnly) {
+        this.isReferenceOnly = isReferenceOnly;
+    }
+
     // Method
     public String getInfo() {
         return "Book ID: " + bookId
             + ", Title: " + title
             + ", Author: " + author
             + ", Year of Publication: " + yearOfPublication
-            + ", Total Books: " + totalBooks;
+            + ", Total Books: " + totalBooks
+            + ", decreaseStock:" + decreaseStock
+            + ", isReferenceOnly" + isReferenceOnly;
+
     }
 }

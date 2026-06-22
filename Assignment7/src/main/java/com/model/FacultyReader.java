@@ -1,12 +1,12 @@
 package main.java.com.model;
 
-import main.java.com.service.Library;
+
 
 public class FacultyReader extends Reader {
     private String facultyCardNumber;
 
-    public FacultyReader(String readerId, String fullName, String facultyCardNumber) {
-        super(Integer.parseInt(readerId), fullName, "", TypeOfReader.GiangVien, "");
+    public FacultyReader(String readerId, String fullName, String facultyCardNumber, int currentBorrowCount) {
+        super(Integer.parseInt(readerId), fullName, "", TypeOfReader.GiangVien, "", currentBorrowCount);
         this.facultyCardNumber = facultyCardNumber;
     }
 
@@ -28,6 +28,22 @@ public class FacultyReader extends Reader {
     public String getInfo() {
         return "| Ma the: " + facultyCardNumber
                 + "[ " + getFullName() + " - Tien phat cua giang vien ]";
+    }
+
+    @Override
+    protected boolean checkSpecialCondition(Book book) {
+        return true;
+    }
+
+    @Override
+    protected String getSpecialConditionMessage() {
+        return "";
+    }
+
+    @Override
+    protected void onBorrowSuccess(Book book) {
+        super.onBorrowSuccess(book); // In thông báo thông thường
+        System.out.println("  -> Da ghi nhan: Nguoi cao tuoi — khong thu phi phat");
     }
 
 }

@@ -3,8 +3,8 @@ package main.java.com.model;
 public class SeniorReader extends Reader {
     private String seniorCardNumber;
 
-    public SeniorReader(String readerId, String fullName, String seniorCardNumber) {
-        super(Integer.parseInt(readerId), fullName, "", TypeOfReader.GiangVien, ""); // Giả sử SeniorReader cũng là GiangVien
+    public SeniorReader(String readerId, String fullName, String seniorCardNumber, int currentBorrowCount) {
+        super(Integer.parseInt(readerId), fullName, "", TypeOfReader.GiangVien, "", currentBorrowCount); // Giả sử SeniorReader cũng là GiangVien
         this.seniorCardNumber = seniorCardNumber;
     }
 
@@ -25,6 +25,24 @@ public class SeniorReader extends Reader {
     @Override
     public String getInfo() {
         return "| Ma the: " + seniorCardNumber
-                + "[NCT - Mien phi phat]";
+                + "[ " + getFullName() + " - Mien phi phat]";
     }
+
+    @Override
+    protected boolean checkSpecialCondition(Book book) {
+        return true;
+    }
+
+    @Override
+    protected String getSpecialConditionMessage() {
+        return "";
+    }
+
+    @Override
+    protected void onBorrowSuccess(Book book) {
+        super.onBorrowSuccess(book); // In thông báo thông thường
+        System.out.println("  -> Da ghi nhan: Nguoi cao tuoi — khong thu phi phat");
+    }
+
+
 }
