@@ -33,17 +33,14 @@ public class Main {
 
 /// Yeu cau 3:
 /*
-
-
-
-
-
-
-
-
-
-
-
-
-
-*/
+ * 1.
+ * [Library] HAS-A [Book]
+ * [Library] HAS-A [Reader]
+ * [Library] HAS-A [BorrowSlip]
+ * [Library] HAS-A [LateFeePolicy]
+ * 
+ * 2.
+ * [Student / Faculty / SeniorReader] IS-A [Reader]
+ * [Standard / Charity / WaivedFeePolicy] IS-A [LateFeePolicy]
+ * 
+ */
