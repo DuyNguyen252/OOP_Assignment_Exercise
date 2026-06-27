@@ -82,13 +82,13 @@ public class Library implements Searchable {
         }
     }
 
-    public double calculateTotalLateFee(int daysLate) {
-        double total = 0;
-        for (Reader r : readers) {
-            total += r.calculateFine(0, daysLate); // Giả sử borrowDate là 0 để tính phí trễ
-        }
-        return total;
-    }
+    // public double calculateTotalLateFee(int daysLate) {
+    //     double total = 0;
+    //     for (Reader r : readers) {
+    //         total += r.calculateFine(0, daysLate); // Giả sử borrowDate là 0 để tính phí trễ
+    //     }
+    //     return total;
+    // }
 
     public Reader findReaderByName(String keyword) {
         for (Reader r : readers) {
@@ -99,21 +99,21 @@ public class Library implements Searchable {
         return null;
     }
 
-    public void printSeniorReaders() {
-        System.out.println("===DOC GIA NGUOI CAO TUOI===");
-        int count = 0;
-        for (Reader r : readers) {
-            if (r instanceof SeniorReader) {
-                SeniorReader sr = (SeniorReader) r;
-                System.out.println(sr.getInfo());
-                System.out.println("Ma the NCT" + sr.getSeniorCardNumber()); // method riêng
-                count++;
-            }
-        }
-        if (count == 0)
-            System.out.println("(Chua coc doc gia NCT)");
+    // public void printSeniorReaders() {
+    //     System.out.println("===DOC GIA NGUOI CAO TUOI===");
+    //     int count = 0;
+    //     for (Reader r : readers) {
+    //         if (r instanceof SeniorReader) {
+    //             SeniorReader sr = (SeniorReader) r;
+    //             System.out.println(sr.getInfo());
+    //             System.out.println("Ma the NCT" + sr.getSeniorCardNumber()); // method riêng
+    //             count++;
+    //         }
+    //     }
+    //     if (count == 0)
+    //         System.out.println("(Chua coc doc gia NCT)");
 
-    }
+    // }
 
     // Bước 1: Định nghĩa interface Strategy
     public interface LateFeePolicy {
@@ -163,19 +163,19 @@ public static class WaivedFeePolicy implements LateFeePolicy {
     }
  
     // Tính tổng phí phạt có áp dụng chính sách hiện tại
-    public double calculateFine(int borrowDate, int dueDate) {
-        double total = 0;
-        for (Reader r : readers) {
-            double baseFee      = r.calculateFine(borrowDate, dueDate); // dynamic binding
-            double adjustedFee  = feePolicy.applyPolicy(baseFee);
-            System.out.printf("  %-20s | Base: %6.0f | Sau CS: %6.0f VND%n",
-                              r.getFullName(), baseFee, adjustedFee);
-            total += adjustedFee;
-        }
-        System.out.printf("Tong phi phat (%s): %.0f VND%n",
-                          feePolicy.getPolicyName(), total);
-        return total;
-    }
+    // public double calculateFine(int borrowDate, int dueDate) {
+    //     double total = 0;
+    //     for (Reader r : readers) {
+    //         double baseFee      = r.calculateFine(borrowDate, dueDate); // dynamic binding
+    //         double adjustedFee  = feePolicy.applyPolicy(baseFee);
+    //         System.out.printf("  %-20s | Base: %6.0f | Sau CS: %6.0f VND%n",
+    //                           r.getFullName(), baseFee, adjustedFee);
+    //         total += adjustedFee;
+    //     }
+    //     System.out.printf("Tong phi phat (%s): %.0f VND%n",
+    //                       feePolicy.getPolicyName(), total);
+    //     return total;
+    // }
 
 
     @Override

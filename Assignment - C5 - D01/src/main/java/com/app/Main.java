@@ -1,7 +1,7 @@
 package main.java.com.app;
 
 import main.java.com.model.*;
-import main.java.com.service.*;
+
 
 public class Main {
     public static void main(String[] args) {

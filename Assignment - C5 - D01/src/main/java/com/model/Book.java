@@ -16,7 +16,10 @@ public class Book implements Borrowable {
         this.bookId = bookId;
         this.title = title;
         this.author = author;
-        this.currentBorrowerId = null;
+        this.yearOfPublication = yearOfPublication;
+        this.totalBooks = totalBooks;
+        this.decreaseStock = decreaseStock;
+        this.isReferenceOnly = isReferenceOnly;
     }
 
     // Getters and Setters

@@ -4,10 +4,10 @@ public class Book {
     private int bookId;
     private String title;
     private String author;
-    private String yearOfPublication;
-    private int totalBooks;
-    private int decreaseStock;
-    private boolean isReferenceOnly;
+    // private String yearOfPublication;
+    // private int totalBooks;
+    // private int decreaseStock;
+    // private boolean isReferenceOnly;
 
 
     // Constructor
@@ -15,10 +15,10 @@ public class Book {
         this.bookId = bookId;
         this.title = title;
         this.author = author;
-        this.yearOfPublication = yearOfPublication;
-        this.totalBooks = totalBooks;
-        this.decreaseStock= decreaseStock;
-        this.isReferenceOnly = isReferenceOnly;
+        // this.yearOfPublication = yearOfPublication;
+        // this.totalBooks = totalBooks;
+        // this.decreaseStock= decreaseStock;
+        // this.isReferenceOnly = isReferenceOnly;
     }
 
     // Getters and Setters
@@ -43,46 +43,56 @@ public class Book {
         this.author = author;
     }
 
-    public String getYearOfPublication() {
-        return yearOfPublication;
-    }
-    public void setYearOfPublication(String yearOfPublication) {
-        this.yearOfPublication = yearOfPublication;
-    }
+    // public String getYearOfPublication() {
+    //     return yearOfPublication;
+    // }
+    // public void setYearOfPublication(String yearOfPublication) {
+    //     this.yearOfPublication = yearOfPublication;
+    // }
 
-    public int getTotalBooks() {
-        return totalBooks;
-    }
+    // public int getTotalBooks() {
+    //     return totalBooks;
+    // }
 
-    public void setTotalBooks(int totalBooks) {
-        this.totalBooks = totalBooks;
-    }
+    // public void setTotalBooks(int totalBooks) {
+    //     this.totalBooks = totalBooks;
+    // }
 
-    public int getDecreaseStock() {
-        return decreaseStock;
-    }
+    // public int getDecreaseStock() {
+    //     return decreaseStock;
+    // }
 
-    public void setDecreaseStock(int decreaseStock) {
-        this.decreaseStock = decreaseStock;
-    }
+    // public void setDecreaseStock(int decreaseStock) {
+    //     this.decreaseStock = decreaseStock;
+    // }
 
-    public boolean getIsReferenceOnly() {
-        return isReferenceOnly;
-    }
+    // public boolean getIsReferenceOnly() {
+    //     return isReferenceOnly;
+    // }
 
-    public void setIsReferenceOnly(boolean isReferenceOnly) {
-        this.isReferenceOnly = isReferenceOnly;
-    }
+    // public void setIsReferenceOnly(boolean isReferenceOnly) {
+    //     this.isReferenceOnly = isReferenceOnly;
+    // }
 
     // Method
     public String getInfo() {
         return "Book ID: " + bookId
             + ", Title: " + title
-            + ", Author: " + author
-            + ", Year of Publication: " + yearOfPublication
-            + ", Total Books: " + totalBooks
-            + ", decreaseStock:" + decreaseStock
-            + ", isReferenceOnly" + isReferenceOnly;
+            + ", Author: " + author;
+            // + ", Year of Publication: " + yearOfPublication
+            // + ", Total Books: " + totalBooks
+            // + ", decreaseStock:" + decreaseStock
+            // + ", isReferenceOnly" + isReferenceOnly;
 
+    }
+
+    public boolean getIsReferenceOnly() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getIsReferenceOnly'");
+    }
+
+    public void getDecreaseStock() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getDecreaseStock'");
     }
 }
