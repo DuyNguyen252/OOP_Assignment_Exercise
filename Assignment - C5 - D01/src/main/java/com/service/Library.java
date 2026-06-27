@@ -3,15 +3,22 @@ package main.java.com.service;
 import main.java.com.model.*;
 
 
+
 import java.time.LocalDate;
-import java.util.ArrayList;
+import java.util.*;
 
 
-public class Library {
-    private ArrayList<Book> books;
+public class Library implements Searchable {
+
+
+    
+
+    private ArrayList<Book> books = new ArrayList<>();
     private ArrayList<Reader> readers;
     private ArrayList<BorrowSlip> borrowSlips;
     private LateFeePolicy    feePolicy;  
+
+  
 
     // Constructor
     public Library() {
@@ -42,16 +49,6 @@ public class Library {
     public void getReaders() {
         for (Reader reader : readers) {
             System.out.println("Registered reader: " + reader.getFullName());
-        }
-    }
-
-    // Quản lý mượn sách
-    public void borrowBook(Librarian librarian, Reader reader, Book book, int slipId, String borrowDate,
-            String dueDate) {
-        BorrowSlip slip = librarian.borrowBook(reader, book, slipId, borrowDate, dueDate);
-        if (slip != null) {
-            borrowSlips.add(slip);
-            System.out.println("Borrowed book: " + book.getTitle() + " by " + reader.getFullName());
         }
     }
 
@@ -179,6 +176,33 @@ public static class WaivedFeePolicy implements LateFeePolicy {
                           feePolicy.getPolicyName(), total);
         return total;
     }
+
+
+    @Override
+    public List<Book> searchByTitle(String keyword) {
+        String kw = Searchable.normalizeKeyword(keyword);
+        List<Book> result = new ArrayList<>();
+        for (Book book : books) {
+            if (book.getTitle().toLowerCase().contains(kw))
+                result.add(book);
+        }
+        return result;
+    }
+
+    @Override
+    public List<Book> searchByAuthor(String keyword) {
+        String kw = Searchable.normalizeKeyword(keyword);
+        List<Book> result = new ArrayList<>();
+        for (Book book : books) {
+            if (book.getAuthor().toLowerCase().contains(kw))
+                result.add(book);
+        }
+        return result;
+    }
+
+
+
+
 }
 
 

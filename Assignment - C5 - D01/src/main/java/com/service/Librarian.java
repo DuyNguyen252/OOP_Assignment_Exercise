@@ -6,12 +6,13 @@ import java.time.temporal.ChronoUnit;
 
 
 public class Librarian {
-    public BorrowSlip borrowBook(Reader reader, Book book, int slipId, String borrowDate, String dueDate) {
+    public BorrowSlip borrowBook(int slipId, Reader reader, String readerId, Book book, String bookId,
+            String borrowDate, String dueDate) {
 
         // Mượn sách
         if (book.getTotalBooks() > 0) {
             book.setTotalBooks(book.getTotalBooks() - 1);
-            BorrowSlip slip = new BorrowSlip(slipId, reader, book, borrowDate, dueDate);
+            BorrowSlip slip = new BorrowSlip(slipId, reader, readerId, book, bookId, borrowDate, dueDate);
             return slip;
         } else {
             System.out.println("Sách đã hết: " + book.getTitle());
